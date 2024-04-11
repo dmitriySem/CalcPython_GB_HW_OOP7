@@ -1,2 +1,10 @@
+import CalculableFactory
+import ViewCalculator
+
+
 if __name__ == '__main__':
-    print("hellow")
+    calc = CalculableFactory()
+    view = ViewCalculator(calc)
+    view.run()
+
+
