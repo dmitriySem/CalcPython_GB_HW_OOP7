@@ -18,8 +18,9 @@ class ICalculable(abc.ABC):
         pass
 
 class Calculator(ICalculable):
-    def __init__(self, primeryArg):
+    def __init__(self, primeryArg:float):
         self.primeryArg = primeryArg
+
     def sum(self, arg: float):
         self.primeryArg += arg
 

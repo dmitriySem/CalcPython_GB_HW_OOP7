@@ -9,6 +9,10 @@ class ICalculableFactory(abc.ABC):
 
 
 class CalculatorFactory(ICalculableFactory):
+
+    def __init__(self):
+        pass
+
     def create(self, primaryArg: float):
         return Calc.Calculator(primaryArg)
 
