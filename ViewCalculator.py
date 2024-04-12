@@ -14,29 +14,36 @@ class ViewClaculator:
 
             while True:
                 try:
-                    arg = int(input("Введите второе число: "))
+                    arg = float(input("Введите второе число: "))
                     break
                 except ValueError:
                     print("Вы ввели не число. Повторите ввод")
 
             while True:
-                cmd = input("Введите команду (+, *, /, =) : ")
+                cmd = input("Введите команду (+, *, /) : ")
                 if (cmd.replace(" ", "") == "+"):
                     calculator.sum(arg)
-                    continue
+                    print(calculator.getResult())
+                    break
                 elif (cmd.replace(" ", "") == "*"):
                     calculator.multi(arg)
-                    continue
-                elif (cmd.replace(" ", "") == "/"):
-                    calculator.div(primaryArg)
-                    continue
-                elif (cmd.replace(" ", "") == "="):
-                    calculator.getResult()
+                    print(calculator.getResult())
                     break
+                elif (cmd.replace(" ", "") == "/"):
+                    try:
+                        calculator.div(arg)
+                        print(calculator.getResult())
+                    except ZeroDivisionError:
+                        print("Ошибка!!! Деление на ноль!")
+                    #
+                    break
+                #elif (cmd.replace(" ", "") == "="):
+                #    calculator.getResult()
+                #    break
                 else:
-                    print("Вы ввели не верную команду")
+                    print("Вы ввели неверную команду, введите (+, *, /)")
             cmd = input("Еще посчитать Да/Нет?")
-            if(cmd.replace(" ", "") == "Да"):
+            if(cmd.replace(" ", "").lower() == "да"):
                 continue
             break
 

@@ -28,10 +28,9 @@ class Calculator(ICalculable):
         self.primeryArg *= arg
 
     def div(self, arg: float):
-        if(arg != 0):
-            self.primeryArg /= arg
-        else:
-            print(f"Ошибка!!! Деление на ноль!")
+        #try:
+        self.primeryArg = (self.primeryArg / arg)
+        #except ZeroDivisionError:
 
 
     def getResult(self) -> float:
